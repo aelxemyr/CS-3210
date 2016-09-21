@@ -1,0 +1,3 @@
+// A comment, all by itself.
+Some text, // and then a comment following it.
+And finally, some text all by itself.

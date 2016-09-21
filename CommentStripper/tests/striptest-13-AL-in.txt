@@ -1,0 +1,16 @@
+/*
+  This is a block comment
+  this is another block comment on another line
+*/
+
+//This is a line comment
+
+this is some plain text
+
+this is another text line
+
+cool beans
+
+sour apples //comment for sour apples.
+
+yes this is text /*this is a block comment */
