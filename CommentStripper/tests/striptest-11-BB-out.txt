@@ -1,0 +1,7 @@
+plain text line 1;
+    plain text line 2;
+plain text line 3; 
+	plain text line 4;
+	/ /fake comment
+plain text line 5;
+fake " //comment 2"

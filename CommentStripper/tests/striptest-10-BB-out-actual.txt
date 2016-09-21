@@ -1,0 +1,4 @@
+    line 2 - preserve formatting
+	line" 4 with unclosed quote
+ line 6 with trailing space		
+line 8

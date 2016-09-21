@@ -1,0 +1,11 @@
+/* */
+/* A single-line block comment. */
+/* A
+   multi-line
+   block
+   comment. */
+/*     
+
+	
+
+*/
