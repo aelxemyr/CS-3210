@@ -1,3 +1,0 @@
-	plain text 1 
-plain "text" 2 
-"string /* does not open a comment"
