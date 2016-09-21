@@ -1,0 +1,12 @@
+ plain text
+	new line of text after a tab plus/ /a broken single-line comment tag
+"in the string // doesn't matter \" we're still in the string and neither does /* " 
+*/ closed block comment
+plain text and tab+spaces blank lines following:
+	preserve formatting
+        whether done with spaces or tabs
+		and in the case of 
+            and with 
+*
+	this 
+	open a block comment

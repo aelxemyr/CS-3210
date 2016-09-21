@@ -1,0 +1,3 @@
+/* A multi-line block comment,
+   spread across precisely
+   three lines. */

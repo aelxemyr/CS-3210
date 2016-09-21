@@ -1,0 +1,13 @@
+A line consisting only of text.
+Some text /* followed by a single-line block comment. */
+Some more text /* followed by a 
+multi-line block comment. */
+/* A comment, all by itself. */
+/* And finally, a very long comment:
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+   Fusce arcu diam, imperdiet id velit faucibus, finibus imperdiet nibh. 
+   Nunc aliquet vulputate lectus in consectetur. 
+   Morbi nunc neque, molestie non quam quis, mattis placerat urna. 
+   Vivamus ex purus, consequat sed elit non, porttitor tincidunt risus. 
+   Cras commodo porttitor enim, in gravida nisi dictum sed.
+*/
