@@ -1,2 +1,0 @@
-// One line of comment.
-// A second line of comment.

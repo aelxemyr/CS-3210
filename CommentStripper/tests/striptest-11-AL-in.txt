@@ -1,5 +1,0 @@
-Here is a line with text
-Here is a line with a comment // Comment
-//Here is a line that has its own comment
-cool
-beans
