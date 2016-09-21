@@ -1,0 +1,7 @@
+/*block comment in Java */
+/* cool
+    beans
+    multiple
+    line comment
+*/
+some random text

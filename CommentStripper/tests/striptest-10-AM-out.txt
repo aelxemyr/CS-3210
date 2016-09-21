@@ -1,0 +1,4 @@
+This line is followed by a "true blank" line.
+This line is followed by a line consisting entirely of spaces.
+This line is followed by a lone consisting entirely of tabs.
+Finally, this line is followed by a combination of spaces and tabs.

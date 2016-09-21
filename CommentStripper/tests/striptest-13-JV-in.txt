@@ -1,0 +1,8 @@
+
+
+normal text /*block // comment /*block
+*
+*
+*/	some text 
+normal//line comment/*comment
+	 normal text
