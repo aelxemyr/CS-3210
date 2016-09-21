@@ -1,6 +1,0 @@
-/*comment 
-	 inside 
-	 */
-
-normal text 
-	text/**/

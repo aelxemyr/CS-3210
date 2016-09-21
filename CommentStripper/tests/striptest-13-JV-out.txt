@@ -1,4 +1,0 @@
-normal text 
-	some text 
-normal
-	 normal text

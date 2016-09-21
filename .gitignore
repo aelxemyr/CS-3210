@@ -42,3 +42,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# (Just ignore EVERYTHING, this is dumb)
+/target/
+/.idea/
+/out/
+*.iml

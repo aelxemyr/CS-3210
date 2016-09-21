@@ -1,6 +1,0 @@
-text first
- 	// tab spaced comment
-// comment text
- 
-//comment text 
-normal text 

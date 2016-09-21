@@ -1,2 +1,0 @@
-Text // with a comment.
-And some more text. // Another comment, as well.
