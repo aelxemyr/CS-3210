@@ -1,5 +1,5 @@
 ;; Bennett Alex Myers - CS 3210 - Fall 2016
-;; =============================================================================
+;; ===========================================================================
 ;; Fizz Buzz function: outputs integers from one to twenty with the following 
 ;; additions:
 ;;   1. if the number is divisible by three, output a sublist containing the 
@@ -14,8 +14,8 @@
   (fizzbuzz-inner '(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20))
 )
 
-;; Fizzbuzz helper function - adds fizz, buzz, fizz buzz, or nothing according 
-;; to the rules of fizzbuzz.
+;; Fizzbuzz helper function - adds fizz, buzz, fizz buzz, or nothing
+;; according to the rules of fizzbuzz.
 (defun add-fizz-or-buzz (n)
   (cond ((= 0 (mod n 15)) (cons n '(fizz buzz)))
         ((= 0 (mod n 3 )) (cons n '(fizz)))
@@ -32,10 +32,8 @@
 )
 
 ;; test plan for fizzbuzz:  
-;; main function simply requires a check that output matches expected result as
-;; specified on spec sheet.
-;;
-;; helper function test plans:
+;; main function simply requires a check that output matches expected result 
+;; as specified on spec sheet.
 ;;
 ;; test plan for add-fizz-or-buzz:  
 ;; test case                          data           expected result      

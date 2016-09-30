@@ -1,10 +1,10 @@
 ;; Bennett Alex Myers - CS 3210 - Fall 2016
-;; =============================================================================
+;; ===========================================================================
 ;; Expression syntax checker: given a possibly nested list of expressions with
 ;; numeric operands and binary infix operators plus, minus, times, and
 ;; divideby, check if the following errors are present: wrong number of tokens
-;; (i.e., not three), operands not numeric, or invalid operator. If an error is
-;; present, return nil; otherwise, return true.
+;; (i.e., not three), operands not numeric, or invalid operator. If an error 
+;; is present, return nil; otherwise, return true.
 ;; Parameters:
 ;;   expr - a list representing an expression
 
@@ -50,8 +50,8 @@
 )
 
 ;; test plan for check-expr:
-;; test case                     data                          expected result    
-;; -----------------------------------------------------------------------------
+;; test case                     data                          expected result
+;; ---------------------------------------------------------------------------
 ;; empty list                    ()                            nil
 ;; unnested, valid               (2 times 5)                   t
 ;; nested, valid                 (4 plus (2 times 5))          t
@@ -59,8 +59,8 @@
 ;; nested, invalid               (2 minus (3 divideby z))      nil
 ;;
 ;; test plan for check-tokens:
-;; test case                     data                         expected result      
-;; -----------------------------------------------------------------------------
+;; test case                     data                         expected result 
+;; ---------------------------------------------------------------------------
 ;; empty list                    ()                           nil
 ;; singleton list                (a)                          nil
 ;; two element list              (a b)                        nil
@@ -68,16 +68,16 @@
 ;; four element list             (a b c d)                    nil
 ;;
 ;; test plan for check-operands (assumption: correct number of tokens):
-;; test case                     data                         expected result      
-;; -----------------------------------------------------------------------------
+;; test case                     data                         expected result 
+;; ---------------------------------------------------------------------------
 ;; numeric operands              (2 x 3)                      t
 ;; left numeric operand          (2 x a)                      nil
 ;; right numeric operand         (a x 3)                      nil
 ;; non-numeric operands          (a x b)                      nil
 ;;
 ;; test plan for check-operator (assumption: numeric operands):
-;; test case                     data                        expected result      
-;; -----------------------------------------------------------------------------
+;; test case                     data                        expected result  
+;; ---------------------------------------------------------------------------
 ;; valid operator: plus          (2 plus 3)                  t
 ;; valid operator: minus         (2 minus 3)                 t
 ;; valid operator: times         (2 times 3)                 t

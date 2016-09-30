@@ -1,8 +1,8 @@
 ;; Bennett Alex Myers - CS 3210 - Fall 2016
-;; =============================================================================
-;; Enforce upper limit: given a number and a list which may be nested, produce a
-;; new list in which all values originally above the number are replaced by that
-;; number.
+;; ===========================================================================
+;; Enforce upper limit: given a number and a list which may be nested, produce
+;; a new list in which all values originally above the number are replaced by 
+;; that number.
 ;; Parameters:
 ;;   lim - number to be used as upper limit
 ;;   lst - a list
@@ -33,8 +33,8 @@
 )
 
 ;; test plan for enforce-limit:
-;; test case                      data                     expected result      
-;; -----------------------------------------------------------------------------
+;; test case                      data                     expected result
+;; ---------------------------------------------------------------------------
 ;; empty list                     1, ()                    ()
 ;; singleton lesser than limit    2, (1)                   (1)
 ;; singleton greater than limit   1, (2)                   (1)

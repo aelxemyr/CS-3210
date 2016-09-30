@@ -1,5 +1,5 @@
 ;; Bennett Alex Myers - CS 3210 - Fall 2016
-;; =============================================================================
+;; ===========================================================================
 ;; Twin: given a list, duplicate each element of the list.
 ;; Parameters:
 ;;   lst - a list
@@ -37,7 +37,7 @@
 
 ;; test plan for twin:  
 ;; test case                          data             expected result      
-;; -----------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------
 ;; empty list                         ()               ()
 ;; singleton list                     (a)              (a a)
 ;; no duplicates                      (1 a xyz)        (1 1 a a xyz xyz)
@@ -46,7 +46,7 @@
 ;;
 ;; test plan for untwin:
 ;; test case                          data             expected result
-;; -----------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------
 ;; empty list                         ()               ()
 ;; singleton list                     (a)              (a)
 ;; list with no pairs                 (a b c)          (a b c)
