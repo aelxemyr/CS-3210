@@ -6,3 +6,7 @@ Project 1: A preprocessor for a compiler. Takes a text file and removes blank li
            in Scala.
 
 Project 2: A series of small programs written in Common Lisp.
+
+Project 3: Images drawn using PostScript.
+
+Included are some other snippets: a loop unroller written in Clojure and the solution to a puzzle in Prolog.
