@@ -1,0 +1,74 @@
+% PostScript Programs
+% Program C: Business Card
+% Bennett Alex Myers
+
+% Letter Size: 612pt x 792pt
+% Business Card Size: 252pt x 144 pt
+
+% Background
+180 378 translate
+0 0 moveto
+252 0 lineto
+252 144 lineto
+0 144 lineto
+closepath
+0.2 setgray
+fill
+
+% Sun logo - inner circle
+60 83 20 0 360 arc
+1 0.6 0 setrgbcolor
+fill
+
+% Calculates polar coordinate, given radius and angle
+/polar {
+  2 copy
+  cos mul
+  3 1 roll
+  sin mul
+} def
+
+% Draw rays, given radius and arclength
+/drawrays {
+  /a exch def    % define arclength variable
+  /r exch def    % define radius variable
+  /p 0 def       % define current arc coordinate
+  /l 60 def      % define ray length
+  { 
+    0 0 r p p a add arc
+    l p a 2 div add polar lineto
+    fill
+    /p p a 2 mul add def
+    p 360 ge {exit} if
+  } loop
+} def
+
+% Sun logo - rays
+60 83 translate
+25 18 drawrays
+
+% Company name
+/Helvetica-Bold findfont 16 scalefont setfont
+-60 -83 translate
+5 5 moveto
+(Solaris Enterprises) show
+
+% Personal info
+/Helvetica-Bold findfont 10 scalefont setfont
+150 85 translate
+0 0 moveto
+(John Smith) show
+/Helvetica findfont 8 scalefont setfont
+0 -10 moveto
+(Consultant) show
+0 -20 moveto
+(TEL: 303 555 5555) show
+
+% Name
+/Courier findfont 14 scalefont setfont
+0 setgray
+-330 329 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program C: Business Card) show

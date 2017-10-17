@@ -1,0 +1,15 @@
+**Loop unrolling test 1: 1 statement in loop body, single character counter, <
+for (i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+**Loop unrolling text 2: 2 statements in loop body, no conventional spacing, <=
+for(j=-5;j<=5;j++){
+int jSquared=j*j;
+System.out.println(jSquared);
+}
+**Loop unrolling test 3: 3 statements in loop body, multi-character counter, <
+for (index = 5; index < 8; index++) {
+    int x = index;
+    int total = x + index;
+    System.out.println(total);
+}

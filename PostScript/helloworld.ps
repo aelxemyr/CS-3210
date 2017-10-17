@@ -1,0 +1,199 @@
+% Ghostscript Test Program - Hello World
+% CSI 321 - Spring 1997
+% J. Gurka
+%
+% Description
+%   This program demonstrates simple PostScript commands, which
+%   will be displayed by the GhostScript interpreter (or GhostView).
+%
+% Procedures
+%   DoWallPaper: print a string across the entire page, in small, light gray print
+%      (contains subprocedures and constants);
+%      expects - print string on stack, grayscale and current point (upper left) set
+%   DoArcs: prints variable-gray arcs with origin at (0, 0)
+%   DoSun: prints sun segment and rays, from origin
+%   DoHelloWorld: prints “Hello World”, angled from origin, 
+%      changing grayscale and letter size, with shadowed letters
+
+% -----------------------------------------------------------------
+
+% DoWallPaper procedure - from PS book, pg. 89
+% -- continuously writes a text string, filling the page
+
+/DoWallPaper {
+   /TM 780 def      % margin definitions - top, bottom, left, right
+   /BM -12 def
+   /LM 0 def
+   /RM 612 def
+
+   /newline         % moves current point to beginning of next line
+   {currentpoint 13 sub
+    exch pop LM
+    exch moveto } def
+
+   /nllfNec         % carriage return, line feed
+    {currentpoint pop RM gt
+     {newline} if } def
+
+   /done?           % check bottom margin
+    {currentpoint exch pop
+     BM lt} def
+
+   /fillpage        % print string repeatedly
+    {/strg exch def
+     { {pop pop nllfNec} strg kshow
+       done? {exit} if
+     } loop
+    } def
+
+   fillpage
+
+} def      % end definition of DoWallPaper
+
+% DoArcs procedure
+% -- prints arcs oriented on (0, 0)
+
+/DoArcs
+   {
+   gsave
+   0 0 moveto
+   .5 setgray
+
+   % loop - print successively lighter, tighter arcs, toward origin
+   1 1 60 {
+      pop
+      newpath
+      0 0 600 0 180 arc
+      stroke
+      currentgray .008 add
+      setgray
+      .98 .98 scale
+      } for
+   grestore
+   } def   % end definition of DoArcs
+
+% -----------------------------------------------------------------
+
+% DoSun procedure
+% -- print black sun and successively darker radial strokes from origin
+
+/DoSun
+   {
+   % sun segment at origin
+   gsave
+   0 setgray
+   0 0 moveto
+   30 0 lineto
+   0 0 30 0 90 arc
+   0 0 lineto
+   closepath
+   fill
+
+   % sun rays from origin
+   .80 setgray
+   1 1 45 {
+      pop
+      30 0 moveto
+      360 0 lineto
+      stroke
+      2 rotate
+      currentgray .013 sub
+      setgray
+      } for
+   grestore
+   } def     % end definition of DoSun
+
+% DoHelloWorld
+% -- print Hello World, diagonally, changing grayscale and font size
+
+/DoHelloWorld
+   {
+   /scalefact 20 def
+   /Courier-Bold-Oblique findfont scalefact scalefont setfont
+
+   % push letters on stack
+   (D) (L) (R) (O) (W) ( ) (O) (L) (L) (E) (H)
+
+   % initialize variables
+   /strlen 11 def
+   /shadownum 5 def
+   /offsetnum 7 def
+
+   % position starting current point
+
+   20 20 moveto
+
+   % print Hello World, varying color and size and shape
+   /grayfact                         % set initial gray factor 
+      1.0
+      strlen 
+         1 
+         add 
+      div 
+      def
+
+   0 setgray
+
+   % letter printing loop
+   1 1 strlen {            
+      dup 15 add rmoveto             % angle text up
+      /scalefact                     % increase font size 
+        scalefact 
+        9 
+        add 
+        def     
+      /Courier-Bold-Oblique findfont 
+      scalefact
+      scalefont
+      setfont
+                   
+      currentgray                    % decrease gray scale (1 = white)
+         grayfact 
+         add 
+      setgray  
+
+   % shadow current char
+
+      1 1 shadownum {pop dup} for    % duplicate character on stack       
+      offsetnum shadownum mul dup rmoveto
+      1 currentgray sub setgray      % flip gray
+      1 1 shadownum {                % shadow print loop
+         pop 
+         currentpoint
+         /oldy exch def
+         /oldx exch def
+         show
+         oldx oldy moveto
+         offsetnum neg dup rmoveto
+         } for
+
+      1 currentgray sub setgray      % restore gray
+      show                           % print one (stacked) letter of phrase
+      } for
+   } def   %end definition of DoHelloWorld
+
+
+
+ %% ====================================================================
+
+%% "main" program
+%% --------------
+
+% print wallpaper 
+0 780 moveto                          % set starting point
+.7 setgray
+/Times-Roman findfont 12 scalefont setfont
+(CSI 321 * Programming Languages *)   % push string
+DoWallPaper
+
+% print arcs
+DoArcs
+
+% print sun
+DoSun 
+
+% print Hello World
+DoHelloWorld
+
+% display result (invokes image window)
+showpage

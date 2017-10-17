@@ -1,0 +1,82 @@
+% PostScript Programs
+% Program D: CS Data Structure (Cons Cells)
+% Bennett Alex Myers
+
+% Letter size: 612pt x 792pt
+
+% Given side length and bottom-middle coordinate, draw an equilateral triangle
+/triangle {
+  /y exch def
+  /x exch def
+  /a exch def
+  x y a 2 div sub moveto
+  0 a rlineto
+  240 rotate
+  0 a rlineto
+  120 rotate
+  closepath
+  fill
+} def
+
+% Given length and direction (in degrees), draw an arrow
+/arrow {
+  /theta exch def
+  /r exch def
+  theta rotate
+  r 0 rlineto
+  gsave
+  stroke
+  grestore
+  10 currentpoint triangle
+  theta -1 mul rotate
+} def
+
+% Draw a cons cell
+/drawcell {
+  0 0 moveto
+  100 0 lineto
+  100 50 lineto
+  0 50 lineto
+  closepath
+  stroke
+  50 0 moveto
+  50 50 lineto
+  stroke
+  25 25 5 0 360 arc fill
+  25 25 moveto
+  60 225 arrow
+  -50 -45 moveto
+  (HEAD) write
+  75 25 moveto
+  75 25 5 0 360 arc fill
+  75 25 moveto
+  45 270 arrow
+} def
+
+% Write text
+/write {
+  /Courier-Bold findfont 14 scalefont setfont
+  show
+} def
+
+% Draw list structure
+/x 100 def % initial x-coord of origin
+/y 620 def % initial y-coord of origin
+7 {
+  x y translate
+  drawcell
+  0 0 moveto
+  /x x 30 add def
+  /y y 160 sub def
+} repeat
+63 -45 moveto
+(NIL) write
+
+% Name
+/Courier findfont 14 scalefont setfont
+0 setgray
+-400 680 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program D: CS Data Structure (Cons Cells)) show

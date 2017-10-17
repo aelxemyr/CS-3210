@@ -1,0 +1,59 @@
+Queries - Dating Database
+
+match/2 with one instantiation:
+
+"Who should _______ date?"
+
+?- match(alice, X).
+X = bob ;
+false.
+
+?- match(bob, X).
+X = alice ;
+X = grace ;
+false.
+
+?- match(carol, X).
+X = evelyn ;
+false.
+
+?- match(dave, X).
+false.
+
+?- match(evelyn, X).
+X = carol ;
+X = frank ;
+X = henry ;
+false.
+
+?- match(frank, X).
+X = evelyn ;
+false.
+
+?- match(grace, X).
+X = bob ;
+false.
+
+?- match(henry, X).
+X = evelyn ;
+false.
+
+match/2 with instantiations:
+
+"Are ______ and _______ a match?"
+
+?- match(alice, bob).
+true .
+
+?- match(carol, dave).
+false.
+
+match/2 with anonymous variable:
+
+"Does there exist a match for _______?"
+
+?- match(dave, _).
+false.
+
+?- match(frank, _).
+true .

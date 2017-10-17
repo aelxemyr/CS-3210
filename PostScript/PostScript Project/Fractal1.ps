@@ -1,0 +1,51 @@
+% PostScript Programs
+% Program F: Fractal
+% Bennett Alex Myers
+
+% Letter Size: 612pt x 792pt
+
+/maxdepth 6 def
+306 400 translate
+
+% Draw a circle
+/circ {
+  newpath
+  x y r 0 360 arc
+  closepath
+  stroke
+} def
+
+% Recursive function - draw eight circles
+/rec {
+  % Variable definitions
+  /depth exch def % recusion depth
+  /r exch def     % radius
+  /y exch def     % y-coordinate
+  /x exch def     % x-coordinate
+  circ
+  depth maxdepth lt
+  {
+    /newr1 r 2.16 div def
+    /newr2 r 2.16 2.1 mul div def
+    /newdepth depth 1 add def
+    x newr1 1.16 mul -30 cos mul add y newr1 1.16 mul -30 sin mul add newr1 newdepth
+    x newr1 1.16 mul 90 cos mul add y newr1 1.16 mul 90 sin mul add newr1 newdepth
+    x newr1 1.16 mul 210 cos mul add y newr1 1.16 mul 210 sin mul add newr1 newdepth
+    x newr2 3.52 mul 30 cos mul add y newr2 3.52 mul 30 sin mul add newr2 newdepth
+    x newr2 3.52 mul 150 cos mul add y newr2 3.52 mul 150 sin mul add newr2 newdepth
+    x newr2 3.52 mul 270 cos mul add y newr2 3.52 mul 270 sin mul add newr2 newdepth
+    rec rec rec rec rec rec
+  } if
+} def
+
+0 setlinewidth
+0 0 250 1 rec
+
+% Name
+/Courier findfont 14 scalefont setfont
+0 setgray
+-306 392 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program F: (Not Quite an) Apollonian Gasket) show

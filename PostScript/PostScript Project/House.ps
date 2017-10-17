@@ -1,0 +1,92 @@
+% PostScript Programs
+% Program B: Simple House
+% Bennett Alex Myers
+
+% Letter Size: 612pt x 792pt
+
+% House coordinates
+/a {0 0} def
+/b {100 0} def
+/c {100 80} def
+/d {50 130} def
+/e {0 80} def
+/f {200 50} def
+/g {200 130} def
+/h {150 180} def
+/i {50 80} def
+
+106 300 translate
+2 2 scale
+
+% Front wall
+a moveto
+b lineto
+c lineto
+d lineto
+e lineto
+closepath
+gsave
+0.5 0 0 setrgbcolor
+fill
+grestore
+0 setgray
+stroke
+
+% Side wall
+b moveto
+f lineto
+g lineto
+c lineto
+closepath
+gsave
+0.5 0 0 setrgbcolor
+fill
+grestore
+0 setgray
+stroke
+
+% Roof
+c moveto
+g lineto
+h lineto
+d lineto
+closepath
+gsave
+0 0 0 setrgbcolor
+fill
+grestore
+0 setgray
+stroke
+
+% Window
+i 12.5 0 360 arc
+closepath
+gsave
+0.5 0.75 1 setrgbcolor
+fill
+grestore
+0 setgray
+stroke
+37.5 80 moveto
+62.5 80 lineto
+50 67.5 moveto
+50 92.5 lineto
+stroke
+
+% Door
+35 0 moveto
+65 0 lineto
+65 40 lineto
+35 40 lineto
+closepath
+0 setgray
+fill
+
+% Name
+0.5 0.5 scale
+/Courier findfont 14 scalefont setfont
+-106 492 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program B: Simple House) show

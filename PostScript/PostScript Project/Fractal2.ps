@@ -1,0 +1,42 @@
+% PostScript Programs
+% Program G: Fractal
+% Bennett Alex Myers
+
+% Letter Size: 612pt x 792pt
+
+/maxdepth 2 def
+306 360 translate
+gsave
+
+% Circle outline
+0 0 280 0 360 arc
+gsave
+stroke
+grestore
+clip
+
+/fibonaccispiral {
+  0 0 10 90 180 arc
+  0 0 10 180 270 arc
+  0 10 20 270 360 arc
+  -10 10 30 0 90 arc
+  -10 -10 50 90 180 arc
+  20 -10 80 180 270 arc
+  20 40 130 270 360 arc
+  -60 40 210 0 90 arc
+  -60 -90 340 90 180 arc
+  stroke
+} def
+
+0 10 moveto
+36 {10 rotate fibonaccispiral} repeat
+
+% Name
+grestore
+/Courier findfont 14 scalefont setfont
+0 setgray
+-306 392 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program G: Fibonacci Spirals) show

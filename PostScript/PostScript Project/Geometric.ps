@@ -1,0 +1,52 @@
+% PostScript Programs
+% Program E: Geometric Form
+% Bennett Alex Myers
+
+% Letter Size: 612pt x 792pt
+
+/maxdepth 4 def
+306 400 translate
+
+% Draw a circle
+/circ {
+  newpath
+  x y r 0 360 arc
+  closepath
+  stroke
+} def
+
+% Recursive function - draw eight circles
+/rec {
+  % Variable definitions
+  /depth exch def % recusion depth
+  /r exch def     % radius
+  /y exch def     % y-coordinate
+  /x exch def     % x-coordinate
+  circ
+  depth maxdepth lt
+  {
+    /newr r 2 div def
+    /newdepth depth 1 add def
+    x newr add y newr newdepth
+    x newr 0.707 mul add y newr 0.707 mul add newr newdepth
+    x newr sub y newr newdepth
+    x newr -0.707 mul add y newr 0.707 mul add newr newdepth
+    x y newr add newr newdepth
+    x newr 0.707 mul add y newr -0.707 mul add newr newdepth
+    x y newr sub newr newdepth
+    x newr -0.707 mul add y newr -0.707 mul add newr newdepth
+    rec rec rec rec rec rec rec rec
+  } if
+} def
+
+0 setlinewidth
+0 0 250 1 rec
+
+% Name
+/Courier findfont 14 scalefont setfont
+0 setgray
+-306 392 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program E: Geometric Form) show

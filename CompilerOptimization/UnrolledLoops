@@ -1,0 +1,61 @@
+**Loop unrolling test 1: 1 statement in loop body, single character counter, <
+i = 0
+System.out.println(i);
+i++;
+System.out.println(i);
+i++;
+System.out.println(i);
+i++;
+System.out.println(i);
+i++;
+System.out.println(i);
+i++;
+**Loop unrolling text 2: 2 statements in loop body, no conventional spacing, <=
+j = -5
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+int jSquared=j*j;
+System.out.println(jSquared);
+j++;
+**Loop unrolling test 3: 3 statements in loop body, multi-character counter, <
+index = 5
+int x = index;
+int total = x + index;
+System.out.println(total);
+index++;
+int x = index;
+int total = x + index;
+System.out.println(total);
+index++;
+int x = index;
+int total = x + index;
+System.out.println(total);
+index++;

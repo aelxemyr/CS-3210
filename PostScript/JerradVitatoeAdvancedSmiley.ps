@@ -1,0 +1,95 @@
+% Jerrad Vitatoe Smiley
+
+% Draw left eye
+235 550 20 0 360 arc closepath
+stroke
+235 550 5 0 360 arc closepath fill
+stroke
+
+% Draw left eyelashes
+50 cos 20 mul 235 add 50 sin 20 mul 550 add moveto
+50 cos 30 mul 235 add 50 sin 30 mul 550 add lineto
+70 cos 20 mul 235 add 70 sin 20 mul 550 add moveto
+70 cos 30 mul 235 add 70 sin 30 mul 550 add lineto
+235 570 moveto 235 580 lineto
+110 cos 20 mul 235 add 110 sin 20 mul 550 add moveto
+110 cos 30 mul 235 add 110 sin 30 mul 550 add lineto
+130 cos 20 mul 235 add 130 sin 20 mul 550 add moveto
+130 cos 30 mul 235 add 130 sin 30 mul 550 add lineto
+stroke
+
+% Draw right eye
+365 550 20 0 360 arc closepath
+stroke
+365 550 5 0 360 arc closepath fill
+stroke
+
+% Draw right eyelashes
+50 cos 20 mul 365 add 50 sin 20 mul 550 add moveto
+50 cos 30 mul 365 add 50 sin 30 mul 550 add lineto
+70 cos 20 mul 365 add 70 sin 20 mul 550 add moveto
+70 cos 30 mul 365 add 70 sin 30 mul 550 add lineto
+365 570 moveto 365 580 lineto
+110 cos 20 mul 365 add 110 sin 20 mul 550 add moveto
+110 cos 30 mul 365 add 110 sin 30 mul 550 add lineto
+130 cos 20 mul 365 add 130 sin 20 mul 550 add moveto
+130 cos 30 mul 365 add 130 sin 30 mul 550 add lineto
+stroke
+
+% Draw nose
+300 525 moveto
+280 480 lineto
+310 480 lineto
+stroke
+
+% Draw mouth
+300 515 100 220 320 arc
+stroke
+300 475 80 198 342 arc
+stroke
+
+% Draw left ear
+175 525 40 105 230 arc
+stroke
+
+% Draw right ear
+425 525 40 310 75 arc
+stroke
+
+% Draw chin
+300 350 25 60 120 arc
+stroke
+
+% Draw head
+300 500 150 0 360 arc closepath
+stroke
+
+% Draw hair
+1.2 setlinewidth
+195 607 moveto 195 592 lineto
+225 630 moveto 225 615 lineto
+255 644 moveto 255 629 lineto
+285 649 moveto 285 634 lineto
+315 649 moveto 315 634 lineto
+345 644 moveto 345 629 lineto
+375 630 moveto 375 615 lineto
+405 607 moveto 405 592 lineto
+stroke
+
+% Print title
+/Courier findfont 14 scalefont setfont
+50 150 moveto
+(Advanced Smiley)
+show
+
+% Print author signature
+/Courier findfont 14 scalefont setfont
+50 135 moveto
+(Author: Bennett Alex Myers)
+show
+
+% Print artist signature
+/Courier findfont 14 scalefont setfont
+50 120 moveto
+(Artist: Jerrad Vitatoe)
+show

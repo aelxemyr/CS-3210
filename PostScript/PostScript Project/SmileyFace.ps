@@ -1,0 +1,52 @@
+% PostScript Programs
+% Program A: Simple Smiley Face
+% Bennett Alex Myers
+
+% Letter size: 612pt x 792pt
+
+% Draw filled circle with black outline
+% Precondition: rgb values already on stack
+/filledcircle {
+  newpath
+  0 0 100 0 360 arc
+  closepath
+  gsave
+  setrgbcolor
+  fill
+  grestore
+  0 setgray
+  stroke
+} def
+
+% Smiley face
+306 450 translate
+2 2 scale
+1 1 0 filledcircle
+0.5 0.5 scale
+
+% Left eye
+-65 50 translate
+0.25 0.25 scale
+0 0 0 filledcircle
+4 4 scale
+
+% Right eye
+130 0 translate
+0.25 0.25 scale
+0 0 0 filledcircle
+4 4 scale
+
+% Mouth
+-65 -80 translate
+0 0 120 200 340 arc
+closepath
+0 setgray
+fill
+
+% Name
+/Courier findfont 14 scalefont setfont
+-306 372 translate
+72 -72 moveto
+(Bennett Alex Myers) show
+72 -87 moveto
+(Program A: Simple Smiley Face) show

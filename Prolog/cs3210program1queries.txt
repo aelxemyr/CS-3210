@@ -1,0 +1,81 @@
+Queries - Dietary Database
+
+First five results for meal/5 with no instantiations:
+
+"What should I make for dinner tonight?"
+
+?- meal(Fruit, Vegetable, Grain, Dairy, Protein).
+
+Fruit = apples,
+Vegetable = asparagus,
+Grain = bread,
+Dairy = milk,
+Protein = eggs ;
+
+Fruit = apples,
+Vegetable = asparagus,
+Grain = bread,
+Dairy = milk,
+Protein = black_beans ;
+
+Fruit = apples,
+Vegetable = asparagus,
+Grain = bread,
+Dairy = milk,
+Protein = black_eyed_peas ;
+
+Fruit = apples,
+Vegetable = asparagus,
+Grain = bread,
+Dairy = milk,
+Protein = chickpeas ;
+
+Fruit = apples,
+Vegetable = asparagus,
+Grain = bread,
+Dairy = milk,
+Protein = lentils .
+
+First five results for meal/5 with Fruit = mangoes and Dairy = yogurt:
+
+"I have mangoes and yogurt. What can I make with that?"
+
+?- meal(mangoes, Vegetable, Grain, milk, Protein).
+
+Vegetable = asparagus,
+Grain = bread,
+Protein = eggs ;
+
+Vegetable = asparagus,
+Grain = bread,
+Protein = black_beans ;
+
+Vegetable = asparagus,
+Grain = bread,
+Protein = black_eyed_peas ;
+
+Vegetable = asparagus,
+Grain = bread,
+Protein = chickpeas ;
+
+Vegetable = asparagus,
+Grain = bread,
+Protein = lentils .
+
+Query with instantiations:
+
+"Is watermelon, black beans, bread, ice_cream, and tofu a meal?"
+
+?- meal(watermelon, black_beans, bread, ice_cream, tofu).
+true .
+
+"Is grapefruit, kale, wild rice, pumpkin, and salmon a meal?"
+
+?- meal(grapefruit, kale, wild_rice, pumpkin, salmon).
+false.
+
+"Can I make a meal with celery and almonds?"
+
+?- meal(_, celery, _, _, almonds).
+true .
+
